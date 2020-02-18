@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth=FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser()!=null)
+        {
+            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        }
         mDialogue=new ProgressDialog(this);
         loginDetails();
     }
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 mDialogue.setMessage("Processing!!!!");
                 mDialogue.show();
 
-                mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())

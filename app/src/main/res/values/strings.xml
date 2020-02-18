@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Ece651</string>
+    <string name="app_name">Expense Manager</string>
+    <string name="expense_manager">Expense_Manager</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="navigation_drawer_close">close navigation drawer</string>
+    <string name="Income">income</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

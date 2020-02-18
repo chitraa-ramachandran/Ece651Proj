@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-   <android.support.design.widget.AppBarLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@id/appbar">
-       <android.support.v7.widget.Toolbar
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@id/my_toolbar"
-           app:titleTextColor="@android:color/white"
-           >
-       </android.support.v7.widget.Toolbar>
-   </android.support.design.widget.AppBarLayout>
-</android.coordinatorlayout.widget.CoordinatorLayout>
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbar">
+        <android.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_toolbar"
+            android:background="@color/toolbar_color"
+            app:titleTextColor="@android:color/white">
+        </android.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <include layout="@layout/content_main"/>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

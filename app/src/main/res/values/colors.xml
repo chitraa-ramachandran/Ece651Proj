@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="toolbar_color">#FF031A6D</color>
+    <color name="nav_header">#020202</color>
+    <color name="dashboard_color">#FF2856E0</color>
+    <color name="income_color">#FF1C2D8A</color>
+    <color name="expense_color">#FF0F2497</color>
 </resources>
