@@ -27,6 +27,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeoutException;
 
 
@@ -93,7 +95,7 @@ public class IncomeFragment extends Fragment {
                     Data data=mysnapshot.getValue(Data.class);
                     totalvalue+=data.getAmount();
                     String stTotalvalue=String.valueOf(totalvalue);
-                    incomeTotalSum.setText(stTotalvalue);
+                    incomeTotalSum.setText(stTotalvalue+".00");
 
                 }
             }
@@ -183,12 +185,21 @@ public class IncomeFragment extends Fragment {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                type=editType.getText().toString().trim();
+                note=editNote.getText().toString().trim();
+                String mdamount=String.valueOf(amount);
+                mdamount=editamount.getText().toString().trim();
+                int myAmount=Integer.parseInt(mdamount);
+                String mDate= DateFormat.getDateInstance().format(new Date());
+                Data data=new Data(myAmount,type,note,post_key,mDate);
+                mIncomeDatabase.child(post_key).setValue(data);
+                dialog.dismiss();
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener()
         { @Override
         public void onClick(View v) {
+            mIncomeDatabase.child(post_key).removeValue();
             dialog.dismiss();
 
         }
