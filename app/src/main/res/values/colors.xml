@@ -8,4 +8,5 @@
     <color name="dashboard_color">#FF2856E0</color>
     <color name="income_color">#FF1C2D8A</color>
     <color name="expense_color">#FF0F2497</color>
+    <color name="date_color">#FFE71A0C</color>
 </resources>
